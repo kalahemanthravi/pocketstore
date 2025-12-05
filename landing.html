@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Store - The Ultimate Secure Vault</title>
+    <meta name="description"
+        content="Pocket Store: The most secure, zero-knowledge vault for your digital life. Store and share messages with military-grade encryption.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-hover:hover {
+            background: rgba(51, 65, 85, 0.8);
+            border-color: rgba(56, 189, 248, 0.5);
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(20px, -20px) scale(1.1);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="blob bg-purple-600 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div
+            class="blob bg-blue-600 w-[30rem] h-[30rem] rounded-full bottom-0 right-0 translate-x-1/3 translate-y-1/3 animation-delay-2000">
+        </div>
+        <div
+            class="blob bg-emerald-500 w-64 h-64 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-sky-500 to-emerald-500 rounded-lg flex items-center justify-center shadow-lg shadow-sky-500/20">
+                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                        </path>
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-white tracking-tight">Pocket Store</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#features" class="hover:text-white transition">Features</a>
+                <a href="#security" class="hover:text-white transition">Security</a>
+                <a href="#privacy" class="hover:text-white transition">Privacy</a>
+                <a href="index.html"
+                    class="bg-white/10 hover:bg-white/20 text-white px-5 py-2 rounded-full border border-white/10 transition backdrop-blur-sm">Launch
+                    App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-20 relative px-6">
+        <div class="max-w-5xl mx-auto text-center z-10">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700/50 text-sky-400 text-xs font-bold uppercase tracking-wider mb-8 fade-in-up">
+                <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+                Now with Hybrid Encryption
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-tight fade-in-up delay-100">
+                Your Digital Life,<br>
+                <span class="gradient-text">Secured in Your Pocket.</span>
+            </h1>
+
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed fade-in-up delay-200">
+                Pocket Store is the ultimate zero-knowledge vault. Store notes, passwords, and secrets with
+                military-grade AES-256 encryption. Only you hold the key.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center fade-in-up delay-300">
+                <a href="index.html"
+                    class="group relative px-8 py-4 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-xl shadow-xl shadow-sky-500/20 transition-all hover:scale-105 overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    </div>
+                    <span class="relative flex items-center gap-2">
+                        Open My Vault
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </span>
+                </a>
+                <a href="#how-it-works"
+                    class="px-8 py-4 bg-slate-800/50 hover:bg-slate-800 text-slate-300 hover:text-white font-semibold rounded-xl border border-slate-700 transition-all hover:border-slate-600">
+                    How it Works
+                </a>
+            </div>
+
+            <!-- Stats/Trust Indicators -->
+            <div
+                class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-800/50 pt-10 fade-in-up delay-300">
+                <div>
+                    <div class="text-3xl font-bold text-white">AES-256</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Encryption Standard</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">0%</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Knowledge Stored</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">100%</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Client-Side</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">Instant</div>
+                    <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Global Access</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Why Pocket Store?</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">We've stripped away the complexity of security. No
+                    installation, no tracking, just pure privacy.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass p-8 rounded-2xl glass-hover transition duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-sky-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-sky-500/20 transition">
+                        <svg class="w-7 h-7 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Zero-Knowledge Architecture</h3>
+                    <p class="text-slate-400 leading-relaxed">We can't read your data even if we wanted to. Encryption
+                        happens 100% in your browser before it ever touches our servers.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass p-8 rounded-2xl glass-hover transition duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition">
+                        <svg class="w-7 h-7 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Secure Sharing</h3>
+                    <p class="text-slate-400 leading-relaxed">Share passwords or notes securely. Generate one-time links
+                        or password-protected access for your recipients.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass p-8 rounded-2xl glass-hover transition duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-500/20 transition">
+                        <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Hybrid Storage</h3>
+                    <p class="text-slate-400 leading-relaxed">Your encrypted data is stored reliably using our hybrid
+                        engine, ensuring it's available whenever and wherever you need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section id="how-it-works" class="py-24 bg-slate-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Simple. Fast. Secure.</h2>
+                    <p class="text-slate-400 mb-8 text-lg">Getting started with Pocket Store takes less than 30 seconds.
+                        No email required, just your secret key.</p>
+
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-sky-600 flex items-center justify-center text-white font-bold shrink-0">
+                                1</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Create Your Vault</h4>
+                                <p class="text-slate-400 text-sm">Choose a unique username and a strong secret key.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-sky-600 flex items-center justify-center text-white font-bold shrink-0">
+                                2</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Store Your Data</h4>
+                                <p class="text-slate-400 text-sm">Write notes or paste passwords. Everything is
+                                    encrypted instantly.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div
+                                class="w-8 h-8 rounded-full bg-sky-600 flex items-center justify-center text-white font-bold shrink-0">
+                                3</div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Access Anywhere</h4>
+                                <p class="text-slate-400 text-sm">Log in from any device to decrypt and view your data.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-sky-500 to-emerald-500 rounded-2xl blur-2xl opacity-20">
+                    </div>
+                    <div class="glass rounded-2xl p-6 relative border border-slate-700/50">
+                        <!-- Mockup UI -->
+                        <div class="flex items-center gap-2 mb-4 border-b border-slate-700/50 pb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <div class="ml-auto w-24 h-2 rounded-full bg-slate-700"></div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="h-8 bg-slate-800 rounded w-3/4 animate-pulse"></div>
+                            <div class="h-24 bg-slate-800/50 rounded w-full border border-slate-700/50 p-3">
+                                <div class="font-mono text-xs text-emerald-400">U2FsdGVkX19... (Encrypted)</div>
+                            </div>
+                            <div class="flex justify-end">
+                                <div class="h-8 w-24 bg-sky-600 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy Teaser -->
+    <section id="privacy" class="py-24 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Your Privacy is Our Priority</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed">
+                We believe privacy is a fundamental human right. That's why we built Pocket Store with a
+                "Zero-Knowledge" policy.
+                We don't track you, we don't sell your data, and we physically cannot read your messages.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="policy.html"
+                    class="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 font-semibold transition">
+                    Read Full Privacy Policy
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-900/50 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div
+                            class="w-6 h-6 bg-gradient-to-br from-sky-500 to-emerald-500 rounded flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <span class="text-lg font-bold text-white">Pocket Store</span>
+                    </div>
+                    <p class="text-slate-500 text-sm max-w-sm">
+                        Secure, simple, and private storage for the modern web. Built with love and encryption.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="index.html" class="hover:text-sky-400 transition">Launch Vault</a></li>
+                        <li><a href="#features" class="hover:text-sky-400 transition">Features</a></li>
+                        <li><a href="#security" class="hover:text-sky-400 transition">Security</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="policy.html" class="hover:text-sky-400 transition">Privacy Policy</a></li>
+                        <li><a href="policy.html" class="hover:text-sky-400 transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-600 text-sm">
+                &copy; 2024 Pocket Store. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('glass', 'shadow-lg');
+                nav.classList.remove('py-4');
+                nav.classList.add('py-2');
+            } else {
+                nav.classList.remove('glass', 'shadow-lg');
+                nav.classList.remove('py-2');
+                nav.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+
+</html>
